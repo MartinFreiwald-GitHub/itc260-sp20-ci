@@ -15,9 +15,9 @@ class News extends CI_Controller {
                 $data['news'] = $this->news_model->get_news();
                 $data['title'] = 'news archive';
         
-                $this->load->view('templates/header', $data);
+               // $this->load->view('templates/header', $data);
                 $this->load->view('news/index', $data);
-                $this->load->view('templates/footer', $data);
+                // $this->load->view('templates/footer', $data);
         }
 
         public function view($slug = NULL)
@@ -31,9 +31,9 @@ class News extends CI_Controller {
         
                 $data['title'] = $data['news_item']['title'];
         
-                $this->load->view('templates/header', $data);
+              //  $this->load->view('templates/header', $data);
                 $this->load->view('news/view', $data);
-                $this->load->view('templates/footer', $data);
+              //  $this->load->view('templates/footer', $data);
         }
 
         public function create(){
@@ -47,9 +47,9 @@ class News extends CI_Controller {
             
                 if ($this->form_validation->run() === FALSE)
                 {
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('news/create');
-                    $this->load->view('templates/footer');
+                 //   $this->load->view('templates/header', $data);
+                    $this->load->view('news/create', $data);
+                 //   $this->load->view('templates/footer');
             
                 }
                 else
