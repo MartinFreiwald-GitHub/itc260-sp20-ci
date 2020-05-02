@@ -14,7 +14,7 @@ class News extends CI_Controller {
         {
                 $data['news'] = $this->news_model->get_news();
                 $data['title'] = 'news archive';
-                $this->load->view('news/index', $data   
+                $this->load->view('news/index', $data);   
         }
 
         public function view($slug = NULL)
@@ -44,16 +44,17 @@ class News extends CI_Controller {
                 }
                 else
                 {
-                //     $this->news_model->set_news();
-                //     $this->load->view('news/success');
+                        //     $this->news_model->set_news();
+                        //     $this->load->view('news/success');
 
-                $slug = $this->news_model->set_news();
-                if($slug ! == false){
-                        feedback('data entered successfully', 'info');
-                        redirect('news/view/' . $slug); 
-                }else{
-                        feedback('data not entered', 'error');
-                        redirect('news/create');
+                        $slug = $this->news_model->set_news();
+                        if($slug !== false){
+                                feedback('data entered successfully', 'info');
+                                redirect('news/view/' . $slug); 
+                        }else{
+                                feedback('data not entered', 'error');
+                                redirect('news/create');        
+                        }
                 }
-        }
+        }// end of create
 }
