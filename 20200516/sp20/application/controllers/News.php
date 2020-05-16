@@ -13,9 +13,9 @@ class News extends CI_Controller {
 
         public function index()
         {
-             
+                $nav1 = $this->config->item('nav1');
+                var_dump($nav1);
                 $this->config->set_item('title', 'Seattle Sports News');
-                $data['news'] = $this->news_model->get_news();
                 $data['title'] = 'news archive';
                 $this->load->view('news/index', $data);   
         }

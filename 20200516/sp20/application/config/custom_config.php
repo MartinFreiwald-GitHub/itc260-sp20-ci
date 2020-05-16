@@ -12,6 +12,6 @@ $config['flickrKey'] = '1b31b382680bf8690f2628a259a30946';
 $config['nav1'] = array(
     'news' => 'News', 
    'news/create' => 'Add News',
-   'pics' => 'Pics'
+   'pics' => 'pics'
 );
 
